@@ -1,0 +1,1 @@
+Credit to http://twitter.com/stokori - for source code ref: https://github.com/stokori/nwodnpcgen
