@@ -129,11 +129,11 @@
             npchtml = npchtml.concat("<b>Secondary Arcana:</b> " + npc['Secondary Arcana']['value']+ "<br>");
             npchtml = npchtml.concat("<b>Type:</b> " + npc['Type']['value'] + "<br>");
             npchtml = npchtml.concat("<b>Allegiance:</b> " + npc['Allegiance']['value'] + "<br><p>");
-            npchtml = npchtml.concat("<button id='rerollButton' onclick='supernal(npc, `Name`)'>Reroll</button> " + "<b>Name:</b> The " + npc['Name Qualifier']['value'] + " " + npc['Name']['value'] + "<br>");
-            npchtml = npchtml.concat("<button id='rerollButton' onclick='supernal(npc, `Appearance`)'>Reroll</button> " + "<b>Appearance:</b> " + npc['Appearance']['value'] + "<br>");
-            npchtml = npchtml.concat("<button id='rerollButton' onclick='supernal(npc, `Aspect/Manner/Dress`)'>Reroll</button> " + "<b>Aspect/Manner/Dress:</b> " + npc['Aspect/Manner/Dress']['value'] + "<br><p>");
-            npchtml = npchtml.concat("<button id='rerollButton' onclick='supernal(npc, `Major Trial`)'>Reroll</button> " + "<b>Major Trial:</b> " + npc['Major Trial']['value'] + "<br>");
-            npchtml = npchtml.concat("<button id='rerollButton' onclick='supernal(npc, `Minor Trial`)'>Reroll</button> " + "<b>Minor Trial:</b> " + npc['Minor Trial']['value'] + "<br><p>");
+            npchtml = npchtml.concat("<button id='rerollButton' onclick='supernal(npc, `Name`, ``, ``)'>Reroll</button> " + "<b>Name:</b> The " + npc['Name Qualifier']['value'] + " " + npc['Name']['value'] + "<br>");
+            npchtml = npchtml.concat("<button id='rerollButton' onclick='supernal(npc, `Appearance`, ``, ``)'>Reroll</button> " + "<b>Appearance:</b> " + npc['Appearance']['value'] + "<br>");
+            npchtml = npchtml.concat("<button id='rerollButton' onclick='supernal(npc, `Aspect/Manner/Dress`, ``, ``)'>Reroll</button> " + "<b>Aspect/Manner/Dress:</b> " + npc['Aspect/Manner/Dress']['value'] + "<br><p>");
+            npchtml = npchtml.concat("<button id='rerollButton' onclick='supernal(npc, `Major Trial`, ``, ``)'>Reroll</button> " + "<b>Major Trial:</b> " + npc['Major Trial']['value'] + "<br>");
+            npchtml = npchtml.concat("<button id='rerollButton' onclick='supernal(npc, `Minor Trial`, ``, ``)'>Reroll</button> " + "<b>Minor Trial:</b> " + npc['Minor Trial']['value'] + "<br><p>");
             npchtml = npchtml.concat("<b>Boon:</b> " + npc['Boon']['value'] + "<br>");
 
             return npchtml;
@@ -171,10 +171,21 @@
         }
         
         function generatePlainText(npc) {
+            
             plaintext = "";
-            for (var key in npc) {
-                plaintext = plaintext.concat(key + ": " + npc[key]['value'] + "\n");
-            }
+            
+            window.npc = npc;
+            plaintext = plaintext.concat("Primary Arcana: " + npc['Primary Arcana']['value'] + "\n");
+            plaintext = plaintext.concat("Secondary Arcana: " + npc['Secondary Arcana']['value'] + "\n");
+            plaintext = plaintext.concat("Type: " + npc['Type']['value'] + "\n");
+            plaintext = plaintext.concat("Allegiance: " + npc['Allegiance']['value'] + "\n");
+            plaintext = plaintext.concat("Name: The " + npc['Name Qualifier']['value'] + " " + npc['Name']['value'] + "\n");
+            plaintext = plaintext.concat("Appearance: " + npc['Appearance']['value'] + "\n");
+            plaintext = plaintext.concat("Aspect/Manner/Dress: " + npc['Aspect/Manner/Dress']['value'] + "\n");
+            plaintext = plaintext.concat("Major Trial: " + npc['Major Trial']['value'] + "\n");
+            plaintext = plaintext.concat("Minor Trial: " + npc['Minor Trial']['value'] + "\n");
+            plaintext = plaintext.concat("Boon: " + npc['Boon']['value'] + "\n");
+
             return plaintext;
         }
         
@@ -195,37 +206,39 @@
                 "Life": "Atavism"
             };
             let parameters = {
-                'Allegiance':['Secondary Arcana', 6],
                 'Name Qualifier':['Secondary Arcana', 2],
                 'Name':['Primary Arcana', 1],
                 'Appearance':['Primary Arcana', 3],
                 'Aspect/Manner/Dress':['Secondary Arcana', 4],
                 'Major Trial':['Primary Arcana', 5],
                 'Minor Trial':['Secondary Arcana', 7],
+                'Allegiance':['Primary Arcana', 6],
                 'Boon':['Primary Arcana', 8]
             };
             window.parameters = parameters;
             
-            let npc = {};
-            if (primaryArcana.length > 0 || secondaryArcana.length > 0) {
-                if (arcana.includes(primaryArcana) && arcana.includes(secondaryArcana)) {
-                    npc['Primary Arcana'] = { 'value' : primaryArcana, 'define' : false };
-                    npc['Secondary Arcana'] = { 'value' : secondaryArcana, 'define' : false };
-                } else if (arcana.includes(primaryArcana)) {
-                    npc['Primary Arcana'] = { 'value' : primaryArcana, 'define' : false };
-                    npc['Secondary Arcana'] = { 'value' : arcana[Math.floor(Math.random()*arcana.length)], 'define' : false };
-                } else {
-                    npc['Primary Arcana'] = { 'value' : arcana[Math.floor(Math.random()*arcana.length)], 'define' : false };
-                    npc['Secondary Arcana'] = { 'value' : secondaryArcana, 'define' : false };
-                }  
-            } else {
-                npc['Primary Arcana'] = { 'value' : arcana[Math.floor(Math.random()*arcana.length)], 'define' : false };
-                npc['Secondary Arcana'] = { 'value' : arcana[Math.floor(Math.random()*arcana.length)], 'define' : false };
-            }
 
-            npc['Type'] = { 'value' : type[npc['Primary Arcana'].value], 'define' : false };
 
             if (changingParam.length == 0) {
+
+                let npc = {};
+                if (primaryArcana.length > 0 || secondaryArcana.length > 0) {
+                    if (arcana.includes(primaryArcana) && arcana.includes(secondaryArcana)) {
+                        npc['Primary Arcana'] = { 'value' : primaryArcana, 'define' : false };
+                        npc['Secondary Arcana'] = { 'value' : secondaryArcana, 'define' : false };
+                    } else if (arcana.includes(primaryArcana)) {
+                        npc['Primary Arcana'] = { 'value' : primaryArcana, 'define' : false };
+                        npc['Secondary Arcana'] = { 'value' : arcana[Math.floor(Math.random()*arcana.length)], 'define' : false };
+                    } else {
+                        npc['Primary Arcana'] = { 'value' : arcana[Math.floor(Math.random()*arcana.length)], 'define' : false };
+                        npc['Secondary Arcana'] = { 'value' : secondaryArcana, 'define' : false };
+                    }  
+                } else {
+                    npc['Primary Arcana'] = { 'value' : arcana[Math.floor(Math.random()*arcana.length)], 'define' : false };
+                    npc['Secondary Arcana'] = { 'value' : arcana[Math.floor(Math.random()*arcana.length)], 'define' : false };
+                }
+
+                npc['Type'] = { 'value' : type[npc['Primary Arcana'].value], 'define' : false };
 
                 // Generate entirely new supernal data set
 
@@ -235,10 +248,6 @@
                 $("textarea#resultTextarea").html(output);
 
                 // Get only required sheet data
-                // MAKE ONE CALL INSTEAD OF TWO?
-                //     https://sheets.googleapis.com/v4/spreadsheets/spreadsheetId/values:batchGet?
-                // ranges=Sheet1!B:B&ranges=Sheet1!D:D&valueRenderOption=UNFORMATTED_VALUES?majorDimension=COLUMNS
-
                 let arcanaData = [];
                 for (const key in npc) {
                     if (key.includes('Arcana')) {
@@ -255,9 +264,9 @@
                 // Generate specific params from sheet data and param definitions
                 for (const key in parameters) {
                     let paramArray = arcanaData[parameters[key][0]].values[parameters[key][1]];
-                    if (!key.includes('Boon') || !key.includes('Allegiance')) {
+                    if (key != 'Boon' && key != 'Allegiance') {
                         npc[key] = { 'value' : paramArray[Math.floor(Math.random()*paramArray.length)], 'define' : false };
-                    } else if (key.includes('Boon')) {
+                    } else if (key == 'Boon') {
                         for (item in paramArray) {
                             if (arcanaData[parameters[key][0]].values[9][item] == npc['Secondary Arcana'].value) {
                                 npc[key] = { 'value' : paramArray[item], 'define' : false };
@@ -265,9 +274,11 @@
                         }
                     } else {
                         for (item in paramArray) {
-                            console.log(arcanaData[parameters[key][0]].values[5][item])
-                            if (arcanaData[parameters[key][0]].values[5][item] == npc['Major Trial'].value) {
-                                npc[key] = { 'value' : paramArray[item], 'define' : false };
+                            console.log(key)
+                            console.log('Change allegiance...');
+                            console.log(arcanaData[parameters['Major Trial'][0]].values[5][item])
+                            if (arcanaData['Primary Arcana'].values[5][item] == npc['Major Trial'].value) {
+                                npc['Allegiance'] = { 'value' : paramArray[item], 'define' : false };
                             }
                         }
                     }
@@ -291,13 +302,18 @@
                     retainedData['Name Qualifier'] = { 'value' : paramArray[Math.floor(Math.random()*paramArray.length)], 'define' : false };
                 } else if (changingParam == 'Major Trial') {
                     paramArray = arcanaData[parameters['Allegiance'][0]].values[parameters['Allegiance'][1]];
-                    retainedData['Allegiance'] = { 'value' : paramArray[Math.floor(Math.random()*paramArray.length)], 'define' : false };
-                }
+                    for (item in paramArray) {
+                        if (arcanaData['Primary Arcana'].values[5][item] == npc['Major Trial'].value) {
+                            retainedData['Allegiance'] = { 'value' : paramArray[item], 'define' : false };
+                        }
+                    }
+                    
+                } 
 
                 output = generateHTML(retainedData);
                 $("#result").html(output);
 
-                plaintext = generatePlainText(npc);
+                plaintext = generatePlainText(retainedData);
                 $("textarea#resultTextarea").html(plaintext);
 
             }
