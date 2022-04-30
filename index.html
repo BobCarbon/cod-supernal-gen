@@ -274,9 +274,6 @@
                         }
                     } else {
                         for (item in paramArray) {
-                            console.log(key)
-                            console.log('Change allegiance...');
-                            console.log(arcanaData[parameters['Major Trial'][0]].values[5][item])
                             if (arcanaData['Primary Arcana'].values[5][item] == npc['Major Trial'].value) {
                                 npc['Allegiance'] = { 'value' : paramArray[item], 'define' : false };
                             }
