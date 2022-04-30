@@ -133,7 +133,8 @@
             npchtml = npchtml.concat("<button id='rerollButton' onclick='supernal(npc, `Appearance`, ``, ``)'>Reroll</button> " + "<b>Appearance:</b> " + npc['Appearance']['value'] + "<br>");
             npchtml = npchtml.concat("<button id='rerollButton' onclick='supernal(npc, `Aspect/Manner/Dress`, ``, ``)'>Reroll</button> " + "<b>Aspect/Manner/Dress:</b> " + npc['Aspect/Manner/Dress']['value'] + "<br><p>");
             npchtml = npchtml.concat("<button id='rerollButton' onclick='supernal(npc, `Major Trial`, ``, ``)'>Reroll</button> " + "<b>Major Trial:</b> " + npc['Major Trial']['value'] + "<br>");
-            npchtml = npchtml.concat("<button id='rerollButton' onclick='supernal(npc, `Minor Trial`, ``, ``)'>Reroll</button> " + "<b>Minor Trial:</b> " + npc['Minor Trial']['value'] + "<br><p>");
+            npchtml = npchtml.concat("<button id='rerollButton' onclick='supernal(npc, `Minor Trial #1`, ``, ``)'>Reroll</button> " + "<b>Minor Trial #1:</b> " + npc['Minor Trial #1']['value'] + "<br>");
+            npchtml = npchtml.concat("<button id='rerollButton' onclick='supernal(npc, `Minor Trial #2`, ``, ``)'>Reroll</button> " + "<b>Minor Trial #2:</b> " + npc['Minor Trial #2']['value'] + "<br><p>");
             npchtml = npchtml.concat("<b>Boon:</b> " + npc['Boon']['value'] + "<br>");
 
             return npchtml;
@@ -183,7 +184,8 @@
             plaintext = plaintext.concat("Appearance: " + npc['Appearance']['value'] + "\n");
             plaintext = plaintext.concat("Aspect/Manner/Dress: " + npc['Aspect/Manner/Dress']['value'] + "\n");
             plaintext = plaintext.concat("Major Trial: " + npc['Major Trial']['value'] + "\n");
-            plaintext = plaintext.concat("Minor Trial: " + npc['Minor Trial']['value'] + "\n");
+            plaintext = plaintext.concat("Minor Trial #1: " + npc['Minor Trial #1']['value'] + "\n");
+            plaintext = plaintext.concat("Minor Trial #2: " + npc['Minor Trial #2']['value'] + "\n");
             plaintext = plaintext.concat("Boon: " + npc['Boon']['value'] + "\n");
 
             return plaintext;
@@ -211,7 +213,8 @@
                 'Appearance':['Primary Arcana', 3],
                 'Aspect/Manner/Dress':['Secondary Arcana', 4],
                 'Major Trial':['Primary Arcana', 5],
-                'Minor Trial':['Secondary Arcana', 7],
+                'Minor Trial #1':['Primary Arcana', 7],
+                'Minor Trial #2':['Secondary Arcana', 7],
                 'Allegiance':['Primary Arcana', 6],
                 'Boon':['Primary Arcana', 8]
             };
