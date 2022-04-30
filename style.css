@@ -2,7 +2,14 @@
 body {
     font-family: 'Verdana', sans-serif;
     font-size: 1em;
+    background-color: white;
+    color: black;
 }
+
+.dark-mode {
+    background-color: #232323;
+    color: #b3b3b3;
+  }
 
 a {
     text-decoration: none;

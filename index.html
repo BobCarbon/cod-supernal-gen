@@ -72,7 +72,7 @@
 </tr>
 </table>
 <hr>
-<p style="font-size: x-small;">
+<p style="font-size: small;">
     <b>Note:</b> <br><br>
     Trials:<br>
     Depending on the Rank of entity summoned, you may need to adjust the difficulty of the Trial to match. The Major Trial is intended for Entities of Rank 3 and above and the Minor Trials are designed to be for Rank 1 and 2 entities. 
@@ -90,6 +90,7 @@
 </p>
 <hr>
 <div id="resultCopyable">
+    <button id="darkModeButton">Toggle Dark Mode</button><br><br>
     <button id="toggleTextareaButton">Plaintext Copy</button>
     <textarea id="resultTextarea">Copyable version here..</textarea>
 </div>
@@ -118,6 +119,33 @@
             });
             
         } );
+
+        // These should probably be in higher scope but heck
+        var arcana = ["Prime", "Forces", "Death", "Matter", "Fate", "Time", "Mind", "Space", "Spirit", "Life"];
+        var type = {
+            "Prime": "Cherub", 
+            "Forces": "Seraph", 
+            "Death":"Specter", 
+            "Matter": "Apeiron", 
+            "Fate": "Moira", 
+            "Time": "Anachronism", 
+            "Mind": "Wraith", 
+            "Space": "Imp", 
+            "Spirit": "Totem", 
+            "Life": "Atavism"
+        };
+        var parameters = {
+            'Name Qualifier':['Secondary Arcana', 2],
+            'Name':['Primary Arcana', 1],
+            'Appearance':['Primary Arcana', 3],
+            'Aspect/Manner/Dress':['Secondary Arcana', 4],
+            'Major Trial':['Primary Arcana', 5],
+            'Minor Trial #1':['Primary Arcana', 7],
+            'Minor Trial #2':['Secondary Arcana', 7],
+            'Allegiance':['Primary Arcana', 6],
+            'Boon':['Primary Arcana', 8]
+        };
+        window.parameters = parameters;
         
         function generateHTML(npc) {
         
@@ -192,35 +220,6 @@
         }
         
         async function supernal(retainedData=[], changingParam='', primaryArcana='', secondaryArcana='') {
-        
-            // These should probably be in higher scope but heck
-            let arcana = ["Prime", "Forces", "Death", "Matter", "Fate", "Time", "Mind", "Space", "Spirit", "Life"];
-            let type = {
-                "Prime": "Cherub", 
-                "Forces": "Seraph", 
-                "Death":"Specter", 
-                "Matter": "Apeiron", 
-                "Fate": "Moira", 
-                "Time": "Anachronism", 
-                "Mind": "Wraith", 
-                "Space": "Imp", 
-                "Spirit": "Totem", 
-                "Life": "Atavism"
-            };
-            let parameters = {
-                'Name Qualifier':['Secondary Arcana', 2],
-                'Name':['Primary Arcana', 1],
-                'Appearance':['Primary Arcana', 3],
-                'Aspect/Manner/Dress':['Secondary Arcana', 4],
-                'Major Trial':['Primary Arcana', 5],
-                'Minor Trial #1':['Primary Arcana', 7],
-                'Minor Trial #2':['Secondary Arcana', 7],
-                'Allegiance':['Primary Arcana', 6],
-                'Boon':['Primary Arcana', 8]
-            };
-            window.parameters = parameters;
-            
-
 
             if (changingParam.length == 0) {
 
@@ -319,10 +318,16 @@
             }
     
         }
+
+        function darkMode() {
+            var element = document.body;
+            element.classList.toggle("dark-mode");
+        } 
         
         $(document).ready(function(){ 
         
-            $("#sprnlButton").click(function(){ supernal(); });    
+            $("#sprnlButton").click(function(){ supernal(); });
+            $("#darkModeButton").click(function(){ darkMode(); });
             $(".container").show();
             
         });
