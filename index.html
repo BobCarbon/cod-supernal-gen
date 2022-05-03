@@ -1,337 +1,355 @@
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Supernal Entity Generator</title>
-    <link rel="icon" type="image/x-icon" href="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2Foriginals%2F0f%2Fb2%2Fca%2F0fb2ca1c2b564ca7de039288bc158d14.jpg&f=1&nofb=1">
+    <link rel="icon" type="image/x-icon"
+        href="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2Foriginals%2F0f%2Fb2%2Fca%2F0fb2ca1c2b564ca7de039288bc158d14.jpg&f=1&nofb=1">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-    <link href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
+    <link href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.css" rel="stylesheet"
+        type="text/css" />
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
+
 <body>
-    <h1>Mage: The Awakening - Supernal Entity Generator</h1> 
-<table>
-    <tr>
-    <td>
-        
-<button class="button" id="sprnlButton" style="width:180px;height:60px;">Generate Random</button>
-<p>
-    OR, input your chosen<br>
-    arcana below (select<br>
-    one or both):
-<p>
-    
-<b>Primary Arcana:</b><br>
-    <select class="select" name="primaryArcana" id="primaryArcana"><br>
-        <option value="">-</option>
-        <option value="Prime">Prime</option>
-        <option value="Forces">Forces</option>
-        <option value="Death">Death</option>
-        <option value="Matter">Matter</option>
-        <option value="Fate">Fate</option>
-        <option value="Time">Time</option>
-        <option value="Mind">Mind</option>
-        <option value="Space">Space</option>
-        <option value="Spirit">Spirit</option>
-        <option value="Life">Life</option>
-    </select>
-    <br>
-<b>Secondary Arcana:</b><br>
-    <select class="select" name="secondaryArcana" id="secondaryArcana"><br>
-        <option value="">-</option>
-        <option value="Prime">Prime</option>
-        <option value="Forces">Forces</option>
-        <option value="Death">Death</option>
-        <option value="Matter">Matter</option>
-        <option value="Fate">Fate</option>
-        <option value="Time">Time</option>
-        <option value="Mind">Mind</option>
-        <option value="Space">Space</option>
-        <option value="Spirit">Spirit</option>
-        <option value="Life">Life</option>
-    </select>
-    <p>
+    <h1>Mage: The Awakening - Supernal Entity Generator</h1>
+    <table>
+        <tr>
+            <td>
 
-  <button class="button" onclick="supernal([],'',document.getElementById('primaryArcana').value,document.getElementById('secondaryArcana').value)">Generate Custom</button>
+                <button class="button" id="sprnlButton" style="width:180px;height:60px;">Generate Random</button>
+                <p>
+                    OR, input your chosen<br>
+                    arcana below (select<br>
+                    one or both):
+                <p>
 
-</td>
-<td>&nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<br>&nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<br>
-    &nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<br>&nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<br>
-    &nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<br>&nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<br>
-    &nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<br>&nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<br>
-    &nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<br>&nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<br>
-    &nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<br>&nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<br>
-    &nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<br>&nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<br>
-    &nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<br></td>
-  <td>
-    <div id="result">
-        Hit Generate to make stuff happen here!
+                    <b>Primary Arcana:</b><br>
+                    <select class="select" name="primaryArcana" id="primaryArcana"><br>
+                        <option value="">-</option>
+                        <option value="Prime">Prime</option>
+                        <option value="Forces">Forces</option>
+                        <option value="Death">Death</option>
+                        <option value="Matter">Matter</option>
+                        <option value="Fate">Fate</option>
+                        <option value="Time">Time</option>
+                        <option value="Mind">Mind</option>
+                        <option value="Space">Space</option>
+                        <option value="Spirit">Spirit</option>
+                        <option value="Life">Life</option>
+                    </select>
+                    <br>
+                    <b>Secondary Arcana:</b><br>
+                    <select class="select" name="secondaryArcana" id="secondaryArcana"><br>
+                        <option value="">-</option>
+                        <option value="Prime">Prime</option>
+                        <option value="Forces">Forces</option>
+                        <option value="Death">Death</option>
+                        <option value="Matter">Matter</option>
+                        <option value="Fate">Fate</option>
+                        <option value="Time">Time</option>
+                        <option value="Mind">Mind</option>
+                        <option value="Space">Space</option>
+                        <option value="Spirit">Spirit</option>
+                        <option value="Life">Life</option>
+                    </select>
+                <p>
+
+                    <button class="button"
+                        onclick="supernal([],'',document.getElementById('primaryArcana').value,document.getElementById('secondaryArcana').value)">Generate
+                        Custom</button>
+
+            </td>
+            <td>&nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<br>&nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<br>
+                &nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<br>&nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<br>
+                &nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<br>&nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<br>
+                &nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<br>&nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<br>
+                &nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<br>&nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<br>
+                &nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<br>&nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<br>
+                &nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<br>&nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<br>
+                &nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<br></td>
+            <td>
+                <div id="result">
+                    Hit Generate to make stuff happen here!
+                </div>
+            </td>
+        </tr>
+    </table>
+    <hr>
+    <p style="font-size: small;">
+        <b>Note:</b> <br><br>
+        Trials:<br>
+        Depending on the Rank of entity summoned, you may need to adjust the difficulty of the Trial to match. The Major
+        Trial is intended for Entities of Rank 3 and above and the Minor Trials are designed to be for Rank 1 and 2
+        entities.
+        <br><br>
+        The Major Trial is derived from the Primary Arcana, while the two Minor Trials are derived from the Primary and
+        Secondary Arcana respectively. You can pick whichever you feel is most appropriate, or apply multiple to be
+        completed in tandem.
+        <br><br>
+        Appearance:<br>
+        You may need to get creative with some of the Appearance/Aspect combinations - or just ignore the Aspect
+        entirely. Similarly the boons given are just suggestions - characters usually have a specific boon in mind
+        anyways when they summon something so just ignore what you don’t like. Half of them came from Signs of Sorcery
+        (slightly abbreviated), the others are homebrew.
+        <br><br>
+        Boon:<br>
+        At the Storyteller’s discretion, the Boon can take effect immediately upon completion of the Trial, or you can
+        rule that the Entity needs to be summoned again for it to be granted (which is what the book recommends).
+        <br><br>
+        Name:<br>
+        If you learn an entity’s name, the next time you attempt a summoning and invoke their name, they are guaranteed
+        to be the Entity that shows up.
+    </p>
+    <hr>
+    <div id="resultCopyable">
+        <button class="button" id="darkModeButton">Toggle Dark Mode</button><br><br>
+        <button class="button" id="toggleTextareaButton">Plaintext Copy</button>
+        <textarea id="resultTextarea">Copyable version here..</textarea>
     </div>
-</td>
-</tr>
-</table>
-<hr>
-<p style="font-size: small;">
-    <b>Note:</b> <br><br>
-    Trials:<br>
-    Depending on the Rank of entity summoned, you may need to adjust the difficulty of the Trial to match. The Major Trial is intended for Entities of Rank 3 and above and the Minor Trials are designed to be for Rank 1 and 2 entities. 
-    <br><br>
-    The Major Trial is derived from the Primary Arcana, while the two Minor Trials are derived from the Primary and Secondary Arcana respectively. You can pick whichever you feel is most appropriate, or apply multiple to be completed in tandem.
-    <br><br>
-    Appearance:<br>
-    You may need to get creative with some of the Appearance/Aspect combinations - or just ignore the Aspect entirely. Similarly the boons given are just suggestions - characters usually have a specific boon in mind anyways when they summon something so just ignore what you don’t like. Half of them came from Signs of Sorcery (slightly abbreviated), the others are homebrew.
-    <br><br>
-    Boon:<br>
-    At the Storyteller’s discretion, the Boon can take effect immediately upon completion of the Trial, or you can rule that the Entity needs to be summoned again for it to be granted (which is what the book recommends).
-    <br><br>
-    Name:<br>
-    If you learn an entity’s name, the next time you attempt a summoning and invoke their name, they are guaranteed to be the Entity that shows up.
-</p>
-<hr>
-<div id="resultCopyable">
-    <button class="button" id="darkModeButton">Toggle Dark Mode</button><br><br>
-    <button class="button" id="toggleTextareaButton">Plaintext Copy</button>
-    <textarea id="resultTextarea">Copyable version here..</textarea>
-</div>
-</div>
-
-<div class="footer">
-    Created by Phoog and BobCarbon <br><br>
-    Credit to<br>
-    - <a href="http://twitter.com/stokori">stokori</a> for original codebase and NPC gen - source code ref: <a href="https://github.com/stokori/nwodnpcgen">Github</a></a><br>
-    - <a href="https://whitewolf.fandom.com/wiki/Signs_of_Sorcery">Signs of Sorcery</a> - source of half of the boons
     </div>
- 
+
+    <div class="footer">
+        Created by Phoog and BobCarbon <br><br>
+        Credit to<br>
+        - <a href="http://twitter.com/stokori">stokori</a> for original codebase and NPC gen - source code ref: <a
+            href="https://github.com/stokori/nwodnpcgen">Github</a></a><br>
+        - <a href="https://whitewolf.fandom.com/wiki/Signs_of_Sorcery">Signs of Sorcery</a> - source of half of the
+        boons
+    </div>
+
     <p>
-    <a title="GDPR-compliant Web Analytics" href="https://clicky.com/101364103"><img alt="Clicky Traffic" src="//static.getclicky.com/media/links/badge.gif" border="0" /></a>
-    <script async src="//static.getclicky.com/101364103.js"></script>
+        <a title="GDPR-compliant Web Analytics" href="https://clicky.com/101364103"><img alt="Clicky Traffic"
+                src="//static.getclicky.com/media/links/badge.gif" border="0" /></a>
+        <script async src="//static.getclicky.com/101364103.js"></script>
 
 </body>
 
 <script>
-        $( function() {
-            $( "#tabs" ).tabs().addClass( "ui-tabs-vertical ui-helper-clearfix" );
-            $( "#tabs li" ).removeClass( "ui-corner-top" ).addClass( "ui-corner-left" );
-             
-            $("#toggleTextareaButton").click(function(){
-                $("#resultTextarea").slideToggle();
-            });
-            
-        } );
+    $(function () {
+        $("#tabs").tabs().addClass("ui-tabs-vertical ui-helper-clearfix");
+        $("#tabs li").removeClass("ui-corner-top").addClass("ui-corner-left");
 
-        // These should probably be in higher scope but heck
-        var arcana = ["Prime", "Forces", "Death", "Matter", "Fate", "Time", "Mind", "Space", "Spirit", "Life"];
-        var type = {
-            "Prime": "Cherub", 
-            "Forces": "Seraph", 
-            "Death":"Specter", 
-            "Matter": "Apeiron", 
-            "Fate": "Moira", 
-            "Time": "Anachronism", 
-            "Mind": "Wraith", 
-            "Space": "Imp", 
-            "Spirit": "Totem", 
-            "Life": "Atavism"
-        };
-        var parameters = {
-            'Name Qualifier':['Secondary Arcana', 2],
-            'Name':['Primary Arcana', 1],
-            'Appearance':['Primary Arcana', 3],
-            'Aspect/Manner/Dress':['Secondary Arcana', 4],
-            'Major Trial':['Primary Arcana', 5],
-            'Minor Trial #1':['Primary Arcana', 7],
-            'Minor Trial #2':['Secondary Arcana', 7],
-            'Allegiance':['Primary Arcana', 6],
-            'Boon':['Primary Arcana', 8]
-        };
-        window.parameters = parameters;
-        
-        function generateHTML(npc) {
-        
-            npchtml = "";
+        $("#toggleTextareaButton").click(function () {
+            $("#resultTextarea").slideToggle();
+        });
 
-            // Add reroll option for supernal params, so can't do programmatically
-            window.npc = npc;
-            npchtml = npchtml.concat("<b>Primary Arcana:</b> " + npc['Primary Arcana']['value']+ "<br>");
-            npchtml = npchtml.concat("<b>Secondary Arcana:</b> " + npc['Secondary Arcana']['value']+ "<br>");
-            npchtml = npchtml.concat("<b>Type:</b> " + npc['Type']['value'] + "<br>");
-            npchtml = npchtml.concat("<b>Allegiance:</b> " + npc['Allegiance']['value'] + "<br><p>");
-            npchtml = npchtml.concat("<button class='button' id='rerollButton' onclick='supernal(npc, `Name`, ``, ``)'>Reroll</button> " + "<b>Name:</b> The " + npc['Name Qualifier']['value'] + " " + npc['Name']['value'] + "<br>");
-            npchtml = npchtml.concat("<button class='button' id='rerollButton' onclick='supernal(npc, `Appearance`, ``, ``)'>Reroll</button> " + "<b>Appearance:</b> " + npc['Appearance']['value'] + "<br>");
-            npchtml = npchtml.concat("<button class='button' id='rerollButton' onclick='supernal(npc, `Aspect/Manner/Dress`, ``, ``)'>Reroll</button> " + "<b>Aspect/Manner/Dress:</b> " + npc['Aspect/Manner/Dress']['value'] + "<br><p>");
-            npchtml = npchtml.concat("<button class='button' id='rerollButton' onclick='supernal(npc, `Major Trial`, ``, ``)'>Reroll</button> " + "<b>Major Trial:</b> " + npc['Major Trial']['value'] + "<br>");
-            npchtml = npchtml.concat("<button class='button' id='rerollButton' onclick='supernal(npc, `Minor Trial #1`, ``, ``)'>Reroll</button> " + "<b>Minor Trial #1:</b> " + npc['Minor Trial #1']['value'] + "<br>");
-            npchtml = npchtml.concat("<button class='button' id='rerollButton' onclick='supernal(npc, `Minor Trial #2`, ``, ``)'>Reroll</button> " + "<b>Minor Trial #2:</b> " + npc['Minor Trial #2']['value'] + "<br><p>");
-            npchtml = npchtml.concat("<b>Boon:</b> " + npc['Boon']['value'] + "<br>");
+    });
 
-            return npchtml;
-        
+    // These should probably be in higher scope but heck
+    var arcana = ["Prime", "Forces", "Death", "Matter", "Fate", "Time", "Mind", "Space", "Spirit", "Life"];
+    var type = {
+        "Prime": "Cherub",
+        "Forces": "Seraph",
+        "Death": "Specter",
+        "Matter": "Apeiron",
+        "Fate": "Moira",
+        "Time": "Anachronism",
+        "Mind": "Wraith",
+        "Space": "Imp",
+        "Spirit": "Totem",
+        "Life": "Atavism"
+    };
+    var parameters = {
+        'Name Qualifier': ['Secondary Arcana', 2],
+        'Name': ['Primary Arcana', 1],
+        'Appearance': ['Primary Arcana', 3],
+        'Aspect/Manner/Dress': ['Secondary Arcana', 4],
+        'Major Trial': ['Primary Arcana', 5],
+        'Minor Trial #1': ['Primary Arcana', 7],
+        'Minor Trial #2': ['Secondary Arcana', 7],
+        'Allegiance': ['Primary Arcana', 6],
+        'Boon': ['Primary Arcana', 8]
+    };
+    window.parameters = parameters;
+
+    function generateHTML(npc) {
+
+        npchtml = "";
+
+        // Add reroll option for supernal params, so can't do programmatically
+        window.npc = npc;
+        npchtml = npchtml.concat("<b>Primary Arcana:</b> " + npc['Primary Arcana']['value'] + "<br>");
+        npchtml = npchtml.concat("<b>Secondary Arcana:</b> " + npc['Secondary Arcana']['value'] + "<br>");
+        npchtml = npchtml.concat("<b>Type:</b> " + npc['Type']['value'] + "<br>");
+        npchtml = npchtml.concat("<b>Allegiance:</b> " + npc['Allegiance']['value'] + "<br><p>");
+        npchtml = npchtml.concat("<button class='button' id='rerollButton' onclick='supernal(npc, `Name`, ``, ``)'>Reroll</button> " + "<b>Name:</b> The " + npc['Name Qualifier']['value'] + " " + npc['Name']['value'] + "<br>");
+        npchtml = npchtml.concat("<button class='button' id='rerollButton' onclick='supernal(npc, `Appearance`, ``, ``)'>Reroll</button> " + "<b>Appearance:</b> " + npc['Appearance']['value'] + "<br>");
+        npchtml = npchtml.concat("<button class='button' id='rerollButton' onclick='supernal(npc, `Aspect/Manner/Dress`, ``, ``)'>Reroll</button> " + "<b>Aspect/Manner/Dress:</b> " + npc['Aspect/Manner/Dress']['value'] + "<br><p>");
+        npchtml = npchtml.concat("<button class='button' id='rerollButton' onclick='supernal(npc, `Major Trial`, ``, ``)'>Reroll</button> " + "<b>Major Trial:</b> " + npc['Major Trial']['value'] + "<br>");
+        npchtml = npchtml.concat("<button class='button' id='rerollButton' onclick='supernal(npc, `Minor Trial #1`, ``, ``)'>Reroll</button> " + "<b>Minor Trial #1:</b> " + npc['Minor Trial #1']['value'] + "<br>");
+        npchtml = npchtml.concat("<button class='button' id='rerollButton' onclick='supernal(npc, `Minor Trial #2`, ``, ``)'>Reroll</button> " + "<b>Minor Trial #2:</b> " + npc['Minor Trial #2']['value'] + "<br><p>");
+        npchtml = npchtml.concat("<b>Boon:</b> " + npc['Boon']['value'] + "<br>");
+
+        return npchtml;
+
+    }
+
+    function makeTheStupidBox(key) {
+        //make the stupid modal box
+        //thanks w3 schools for making something simple because jqueryui actually kind of sucks
+        // Get the modal
+        var modal = document.getElementById(key.toLowerCase());
+
+        // Get the button that opens the modal
+        var btn = document.getElementById(key.toLowerCase() + 'Define');
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks on the button, open the modal 
+        btn.onclick = function () {
+            modal.style.display = "block";
         }
-        
-        function makeTheStupidBox(key) {
-            //make the stupid modal box
-            //thanks w3 schools for making something simple because jqueryui actually kind of sucks
-            // Get the modal
-            var modal = document.getElementById(key.toLowerCase());
 
-            // Get the button that opens the modal
-            var btn = document.getElementById(key.toLowerCase() + 'Define');
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function () {
+            modal.style.display = "none";
+        }
 
-            // Get the <span> element that closes the modal
-            var span = document.getElementsByClassName("close")[0];
-
-            // When the user clicks on the button, open the modal 
-            btn.onclick = function() {
-                modal.style.display = "block";
-            }
-
-            // When the user clicks on <span> (x), close the modal
-            span.onclick = function() {
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function (event) {
+            if (event.target == modal) {
                 modal.style.display = "none";
             }
+        }
+    }
 
-            // When the user clicks anywhere outside of the modal, close it
-            window.onclick = function(event) {
-                if (event.target == modal) {
-                    modal.style.display = "none";
+    function generatePlainText(npc) {
+
+        plaintext = "";
+
+        window.npc = npc;
+        plaintext = plaintext.concat("Primary Arcana: " + npc['Primary Arcana']['value'] + "\n");
+        plaintext = plaintext.concat("Secondary Arcana: " + npc['Secondary Arcana']['value'] + "\n");
+        plaintext = plaintext.concat("Type: " + npc['Type']['value'] + "\n");
+        plaintext = plaintext.concat("Allegiance: " + npc['Allegiance']['value'] + "\n");
+        plaintext = plaintext.concat("Name: The " + npc['Name Qualifier']['value'] + " " + npc['Name']['value'] + "\n");
+        plaintext = plaintext.concat("Appearance: " + npc['Appearance']['value'] + "\n");
+        plaintext = plaintext.concat("Aspect/Manner/Dress: " + npc['Aspect/Manner/Dress']['value'] + "\n");
+        plaintext = plaintext.concat("Major Trial: " + npc['Major Trial']['value'] + "\n");
+        plaintext = plaintext.concat("Minor Trial #1: " + npc['Minor Trial #1']['value'] + "\n");
+        plaintext = plaintext.concat("Minor Trial #2: " + npc['Minor Trial #2']['value'] + "\n");
+        plaintext = plaintext.concat("Boon: " + npc['Boon']['value'] + "\n");
+
+        return plaintext;
+    }
+
+    async function supernal(retainedData = [], changingParam = '', primaryArcana = '', secondaryArcana = '') {
+
+        if (changingParam.length == 0) {
+
+            let npc = {};
+            if (primaryArcana.length > 0 || secondaryArcana.length > 0) {
+                if (arcana.includes(primaryArcana) && arcana.includes(secondaryArcana)) {
+                    npc['Primary Arcana'] = { 'value': primaryArcana, 'define': false };
+                    npc['Secondary Arcana'] = { 'value': secondaryArcana, 'define': false };
+                } else if (arcana.includes(primaryArcana)) {
+                    npc['Primary Arcana'] = { 'value': primaryArcana, 'define': false };
+                    npc['Secondary Arcana'] = { 'value': arcana[Math.floor(Math.random() * arcana.length)], 'define': false };
+                } else {
+                    npc['Primary Arcana'] = { 'value': arcana[Math.floor(Math.random() * arcana.length)], 'define': false };
+                    npc['Secondary Arcana'] = { 'value': secondaryArcana, 'define': false };
+                }
+            } else {
+                npc['Primary Arcana'] = { 'value': arcana[Math.floor(Math.random() * arcana.length)], 'define': false };
+                npc['Secondary Arcana'] = { 'value': arcana[Math.floor(Math.random() * arcana.length)], 'define': false };
+            }
+
+            npc['Type'] = { 'value': type[npc['Primary Arcana'].value], 'define': false };
+
+            // Generate entirely new supernal data set
+
+            //clear previous results
+            output = "Loading...";
+            $("#result").html(output);
+            $("textarea#resultTextarea").html(output);
+
+            // Get only required sheet data
+            let arcanaData = [];
+            for (const key in npc) {
+                if (key.includes('Arcana')) {
+                    let url = `https://sheets.googleapis.com/v4/spreadsheets/1Lwa-2KwXYOns7PCT_VhtZl2d_MsCSSlsIpVLL1Jr1EE/values/${npc[key].value}!A4:Z100?majorDimension=COLUMNS&key=AIzaSyA-DIgqld2mAhqogmKxKa6CeijIDExQnWs`;
+                    let response = await fetch(url);
+                    let data = await response.json();
+                    arcanaData[key] = data;
                 }
             }
-        }
-        
-        function generatePlainText(npc) {
-            
-            plaintext = "";
-            
-            window.npc = npc;
-            plaintext = plaintext.concat("Primary Arcana: " + npc['Primary Arcana']['value'] + "\n");
-            plaintext = plaintext.concat("Secondary Arcana: " + npc['Secondary Arcana']['value'] + "\n");
-            plaintext = plaintext.concat("Type: " + npc['Type']['value'] + "\n");
-            plaintext = plaintext.concat("Allegiance: " + npc['Allegiance']['value'] + "\n");
-            plaintext = plaintext.concat("Name: The " + npc['Name Qualifier']['value'] + " " + npc['Name']['value'] + "\n");
-            plaintext = plaintext.concat("Appearance: " + npc['Appearance']['value'] + "\n");
-            plaintext = plaintext.concat("Aspect/Manner/Dress: " + npc['Aspect/Manner/Dress']['value'] + "\n");
-            plaintext = plaintext.concat("Major Trial: " + npc['Major Trial']['value'] + "\n");
-            plaintext = plaintext.concat("Minor Trial #1: " + npc['Minor Trial #1']['value'] + "\n");
-            plaintext = plaintext.concat("Minor Trial #2: " + npc['Minor Trial #2']['value'] + "\n");
-            plaintext = plaintext.concat("Boon: " + npc['Boon']['value'] + "\n");
 
-            return plaintext;
-        }
-        
-        async function supernal(retainedData=[], changingParam='', primaryArcana='', secondaryArcana='') {
+            // Elevate generated sheet data in case of rerolling individual params
+            window.arcanaData = arcanaData;
 
-            if (changingParam.length == 0) {
-
-                let npc = {};
-                if (primaryArcana.length > 0 || secondaryArcana.length > 0) {
-                    if (arcana.includes(primaryArcana) && arcana.includes(secondaryArcana)) {
-                        npc['Primary Arcana'] = { 'value' : primaryArcana, 'define' : false };
-                        npc['Secondary Arcana'] = { 'value' : secondaryArcana, 'define' : false };
-                    } else if (arcana.includes(primaryArcana)) {
-                        npc['Primary Arcana'] = { 'value' : primaryArcana, 'define' : false };
-                        npc['Secondary Arcana'] = { 'value' : arcana[Math.floor(Math.random()*arcana.length)], 'define' : false };
-                    } else {
-                        npc['Primary Arcana'] = { 'value' : arcana[Math.floor(Math.random()*arcana.length)], 'define' : false };
-                        npc['Secondary Arcana'] = { 'value' : secondaryArcana, 'define' : false };
-                    }  
+            // Generate specific params from sheet data and param definitions
+            for (const key in parameters) {
+                let paramArray = arcanaData[parameters[key][0]].values[parameters[key][1]];
+                if (key != 'Boon' && key != 'Allegiance') {
+                    npc[key] = { 'value': paramArray[Math.floor(Math.random() * paramArray.length)], 'define': false };
+                } else if (key == 'Boon') {
+                    for (item in paramArray) {
+                        if (arcanaData[parameters[key][0]].values[9][item] == npc['Secondary Arcana'].value) {
+                            npc[key] = { 'value': paramArray[item], 'define': false };
+                        }
+                    }
                 } else {
-                    npc['Primary Arcana'] = { 'value' : arcana[Math.floor(Math.random()*arcana.length)], 'define' : false };
-                    npc['Secondary Arcana'] = { 'value' : arcana[Math.floor(Math.random()*arcana.length)], 'define' : false };
-                }
-
-                npc['Type'] = { 'value' : type[npc['Primary Arcana'].value], 'define' : false };
-
-                // Generate entirely new supernal data set
-
-                //clear previous results
-                output = "Loading...";
-                $("#result").html(output);
-                $("textarea#resultTextarea").html(output);
-
-                // Get only required sheet data
-                let arcanaData = [];
-                for (const key in npc) {
-                    if (key.includes('Arcana')) {
-                        let url=`https://sheets.googleapis.com/v4/spreadsheets/1Lwa-2KwXYOns7PCT_VhtZl2d_MsCSSlsIpVLL1Jr1EE/values/${npc[key].value}!A4:Z100?majorDimension=COLUMNS&key=AIzaSyA-DIgqld2mAhqogmKxKa6CeijIDExQnWs`;
-                        let response = await fetch(url);
-                        let data = await response.json();
-                        arcanaData[key] = data;
-                    }
-                }
-
-                // Elevate generated sheet data in case of rerolling individual params
-                window.arcanaData = arcanaData;
-
-                // Generate specific params from sheet data and param definitions
-                for (const key in parameters) {
-                    let paramArray = arcanaData[parameters[key][0]].values[parameters[key][1]];
-                    if (key != 'Boon' && key != 'Allegiance') {
-                        npc[key] = { 'value' : paramArray[Math.floor(Math.random()*paramArray.length)], 'define' : false };
-                    } else if (key == 'Boon') {
-                        for (item in paramArray) {
-                            if (arcanaData[parameters[key][0]].values[9][item] == npc['Secondary Arcana'].value) {
-                                npc[key] = { 'value' : paramArray[item], 'define' : false };
-                            }
-                        }
-                    } else {
-                        for (item in paramArray) {
-                            if (arcanaData['Primary Arcana'].values[5][item] == npc['Major Trial'].value) {
-                                npc['Allegiance'] = { 'value' : paramArray[item], 'define' : false };
-                            }
-                        }
-                    }
-                }
-
-                output = generateHTML(npc);
-                $("#result").html(output);
-
-                plaintext = generatePlainText(npc);
-                $("textarea#resultTextarea").html(plaintext);
-
-            } else {
-
-                // Reroll mechanic - uses existing array, previously generated data,
-                // and chosen param passed to function and rerolls param only
-                let paramArray = arcanaData[parameters[changingParam][0]].values[parameters[changingParam][1]];
-                retainedData[changingParam] = { 'value' : paramArray[Math.floor(Math.random()*paramArray.length)], 'define' : false };
-
-                if (changingParam == 'Name') {
-                    paramArray = arcanaData[parameters['Name Qualifier'][0]].values[parameters['Name Qualifier'][1]];
-                    retainedData['Name Qualifier'] = { 'value' : paramArray[Math.floor(Math.random()*paramArray.length)], 'define' : false };
-                } else if (changingParam == 'Major Trial') {
-                    paramArray = arcanaData[parameters['Allegiance'][0]].values[parameters['Allegiance'][1]];
                     for (item in paramArray) {
                         if (arcanaData['Primary Arcana'].values[5][item] == npc['Major Trial'].value) {
-                            retainedData['Allegiance'] = { 'value' : paramArray[item], 'define' : false };
+                            npc['Allegiance'] = { 'value': paramArray[item], 'define': false };
                         }
                     }
-                    
-                } 
+                }
+            }
 
-                output = generateHTML(retainedData);
-                $("#result").html(output);
+            output = generateHTML(npc);
+            $("#result").html(output);
 
-                plaintext = generatePlainText(retainedData);
-                $("textarea#resultTextarea").html(plaintext);
+            plaintext = generatePlainText(npc);
+            $("textarea#resultTextarea").html(plaintext);
+
+        } else {
+
+            // Reroll mechanic - uses existing array, previously generated data,
+            // and chosen param passed to function and rerolls param only
+            let paramArray = arcanaData[parameters[changingParam][0]].values[parameters[changingParam][1]];
+            retainedData[changingParam] = { 'value': paramArray[Math.floor(Math.random() * paramArray.length)], 'define': false };
+
+            if (changingParam == 'Name') {
+                paramArray = arcanaData[parameters['Name Qualifier'][0]].values[parameters['Name Qualifier'][1]];
+                retainedData['Name Qualifier'] = { 'value': paramArray[Math.floor(Math.random() * paramArray.length)], 'define': false };
+            } else if (changingParam == 'Major Trial') {
+                paramArray = arcanaData[parameters['Allegiance'][0]].values[parameters['Allegiance'][1]];
+                for (item in paramArray) {
+                    if (arcanaData['Primary Arcana'].values[5][item] == npc['Major Trial'].value) {
+                        retainedData['Allegiance'] = { 'value': paramArray[item], 'define': false };
+                    }
+                }
 
             }
-    
+
+            output = generateHTML(retainedData);
+            $("#result").html(output);
+
+            plaintext = generatePlainText(retainedData);
+            $("textarea#resultTextarea").html(plaintext);
+
         }
 
-        function darkMode() {
-            var pageMode = document.body;
-            pageMode.classList.toggle("dark-mode");
-        } 
-        
-        $(document).ready(function(){ 
-        
-            $("#sprnlButton").click(function(){ supernal(); });
-            $("#darkModeButton").click(function(){ darkMode(); });
-            $(".container").show();
-            
-        });
-        
-    </script>
+    }
+
+    function darkMode() {
+        var pageMode = document.body;
+        pageMode.classList.toggle("dark-mode");
+    }
+
+    $(document).ready(function () {
+
+        $("#sprnlButton").click(function () { supernal(); });
+        $("#darkModeButton").click(function () { darkMode(); });
+        $(".container").show();
+
+    });
+
+</script>
 
 </html>
