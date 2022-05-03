@@ -119,6 +119,8 @@
             });
             
         } );
+        const dotenv = require("dotenv");
+        dotenv.config({ path: ".env" });
 
         // These should probably be in higher scope but heck
         var arcana = ["Prime", "Forces", "Death", "Matter", "Fate", "Time", "Mind", "Space", "Spirit", "Life"];
@@ -253,7 +255,7 @@
                 let arcanaData = [];
                 for (const key in npc) {
                     if (key.includes('Arcana')) {
-                        let url=`https://sheets.googleapis.com/v4/spreadsheets/${process.env.SHEET_ID}/values/${npc[key].value}!A4:Z100?majorDimension=COLUMNS&key=${process.env.API_KEY}`;
+                        let url=`https://sheets.googleapis.com/v4/spreadsheets/${environment.SHEET_ID}/values/${npc[key].value}!A4:Z100?majorDimension=COLUMNS&key=${environment.API_KEY}`;
                         let response = await fetch(url);
                         let data = await response.json();
                         arcanaData[key] = data;
