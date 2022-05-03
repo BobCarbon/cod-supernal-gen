@@ -253,7 +253,7 @@
                 let arcanaData = [];
                 for (const key in npc) {
                     if (key.includes('Arcana')) {
-                        let url=`https://sheets.googleapis.com/v4/spreadsheets/${environment.SHEET_ID}/values/${npc[key].value}!A4:Z100?majorDimension=COLUMNS&key=${environment.API_KEY}`;
+                        let url=`https://sheets.googleapis.com/v4/spreadsheets/1Lwa-2KwXYOns7PCT_VhtZl2d_MsCSSlsIpVLL1Jr1EE/values/${npc[key].value}!A4:Z100?majorDimension=COLUMNS&key=AIzaSyA-DIgqld2mAhqogmKxKa6CeijIDExQnWs`;
                         let response = await fetch(url);
                         let data = await response.json();
                         arcanaData[key] = data;
