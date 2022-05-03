@@ -15,7 +15,7 @@
     <tr>
     <td>
         
-<button id="sprnlButton" style="width:180px;height:60px;">Generate Random</button>
+<button class="button" id="sprnlButton" style="width:180px;height:60px;">Generate Random</button>
 <p>
     OR, input your chosen<br>
     arcana below (select<br>
@@ -23,7 +23,7 @@
 <p>
     
 <b>Primary Arcana:</b><br>
-    <select name="primaryArcana" id="primaryArcana"><br>
+    <select class="select" name="primaryArcana" id="primaryArcana"><br>
         <option value="">-</option>
         <option value="Prime">Prime</option>
         <option value="Forces">Forces</option>
@@ -38,7 +38,7 @@
     </select>
     <br>
 <b>Secondary Arcana:</b><br>
-    <select name="secondaryArcana" id="secondaryArcana"><br>
+    <select class="select" name="secondaryArcana" id="secondaryArcana"><br>
         <option value="">-</option>
         <option value="Prime">Prime</option>
         <option value="Forces">Forces</option>
@@ -53,7 +53,7 @@
     </select>
     <p>
 
-  <button onclick="supernal([],'',document.getElementById('primaryArcana').value,document.getElementById('secondaryArcana').value)">Generate Custom</button>
+  <button class="button" onclick="supernal([],'',document.getElementById('primaryArcana').value,document.getElementById('secondaryArcana').value)">Generate Custom</button>
 
 </td>
 <td>&nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<br>&nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<br>
@@ -90,8 +90,8 @@
 </p>
 <hr>
 <div id="resultCopyable">
-    <button id="darkModeButton">Toggle Dark Mode</button><br><br>
-    <button id="toggleTextareaButton">Plaintext Copy</button>
+    <button class="button" id="darkModeButton">Toggle Dark Mode</button><br><br>
+    <button class="button" id="toggleTextareaButton">Plaintext Copy</button>
     <textarea id="resultTextarea">Copyable version here..</textarea>
 </div>
 </div>
@@ -157,12 +157,12 @@
             npchtml = npchtml.concat("<b>Secondary Arcana:</b> " + npc['Secondary Arcana']['value']+ "<br>");
             npchtml = npchtml.concat("<b>Type:</b> " + npc['Type']['value'] + "<br>");
             npchtml = npchtml.concat("<b>Allegiance:</b> " + npc['Allegiance']['value'] + "<br><p>");
-            npchtml = npchtml.concat("<button id='rerollButton' onclick='supernal(npc, `Name`, ``, ``)'>Reroll</button> " + "<b>Name:</b> The " + npc['Name Qualifier']['value'] + " " + npc['Name']['value'] + "<br>");
-            npchtml = npchtml.concat("<button id='rerollButton' onclick='supernal(npc, `Appearance`, ``, ``)'>Reroll</button> " + "<b>Appearance:</b> " + npc['Appearance']['value'] + "<br>");
-            npchtml = npchtml.concat("<button id='rerollButton' onclick='supernal(npc, `Aspect/Manner/Dress`, ``, ``)'>Reroll</button> " + "<b>Aspect/Manner/Dress:</b> " + npc['Aspect/Manner/Dress']['value'] + "<br><p>");
-            npchtml = npchtml.concat("<button id='rerollButton' onclick='supernal(npc, `Major Trial`, ``, ``)'>Reroll</button> " + "<b>Major Trial:</b> " + npc['Major Trial']['value'] + "<br>");
-            npchtml = npchtml.concat("<button id='rerollButton' onclick='supernal(npc, `Minor Trial #1`, ``, ``)'>Reroll</button> " + "<b>Minor Trial #1:</b> " + npc['Minor Trial #1']['value'] + "<br>");
-            npchtml = npchtml.concat("<button id='rerollButton' onclick='supernal(npc, `Minor Trial #2`, ``, ``)'>Reroll</button> " + "<b>Minor Trial #2:</b> " + npc['Minor Trial #2']['value'] + "<br><p>");
+            npchtml = npchtml.concat("<button class='button' id='rerollButton' onclick='supernal(npc, `Name`, ``, ``)'>Reroll</button> " + "<b>Name:</b> The " + npc['Name Qualifier']['value'] + " " + npc['Name']['value'] + "<br>");
+            npchtml = npchtml.concat("<button class='button' id='rerollButton' onclick='supernal(npc, `Appearance`, ``, ``)'>Reroll</button> " + "<b>Appearance:</b> " + npc['Appearance']['value'] + "<br>");
+            npchtml = npchtml.concat("<button class='button' id='rerollButton' onclick='supernal(npc, `Aspect/Manner/Dress`, ``, ``)'>Reroll</button> " + "<b>Aspect/Manner/Dress:</b> " + npc['Aspect/Manner/Dress']['value'] + "<br><p>");
+            npchtml = npchtml.concat("<button class='button' id='rerollButton' onclick='supernal(npc, `Major Trial`, ``, ``)'>Reroll</button> " + "<b>Major Trial:</b> " + npc['Major Trial']['value'] + "<br>");
+            npchtml = npchtml.concat("<button class='button' id='rerollButton' onclick='supernal(npc, `Minor Trial #1`, ``, ``)'>Reroll</button> " + "<b>Minor Trial #1:</b> " + npc['Minor Trial #1']['value'] + "<br>");
+            npchtml = npchtml.concat("<button class='button' id='rerollButton' onclick='supernal(npc, `Minor Trial #2`, ``, ``)'>Reroll</button> " + "<b>Minor Trial #2:</b> " + npc['Minor Trial #2']['value'] + "<br><p>");
             npchtml = npchtml.concat("<b>Boon:</b> " + npc['Boon']['value'] + "<br>");
 
             return npchtml;
@@ -320,8 +320,8 @@
         }
 
         function darkMode() {
-            var element = document.body;
-            element.classList.toggle("dark-mode");
+            var pageMode = document.body;
+            pageMode.classList.toggle("dark-mode");
         } 
         
         $(document).ready(function(){ 

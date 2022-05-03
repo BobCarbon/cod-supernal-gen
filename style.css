@@ -6,10 +6,28 @@ body {
     color: black;
 }
 
+.button {
+    color: rgb(0, 0, 0);
+}
+
+.select {
+    color: rgb(0, 0, 0);
+}
+
 .dark-mode {
     background-color: #232323;
     color: #b3b3b3;
-  }
+}
+
+.dark-mode .button {
+    background-color: #2e2e2e;
+    color: rgb(226, 226, 226);
+}
+
+.dark-mode .select {
+    background-color: #2e2e2e;
+    color: rgb(226, 226, 226);
+}
 
 a {
     text-decoration: none;
