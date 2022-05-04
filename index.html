@@ -79,8 +79,7 @@
     </table>
     <hr>
     <p style="font-size: small;">
-        <b>Note:</b> <br><br>
-        Trials:<br>
+        <b>Trials:</b><br>
         Depending on the Rank of entity summoned, you may need to adjust the difficulty of the Trial to match. The Major
         Trial is intended for Entities of Rank 3 and above and the Minor Trials are designed to be for Rank 1 and 2
         entities.
@@ -89,17 +88,17 @@
         Secondary Arcana respectively. You can pick whichever you feel is most appropriate, or apply multiple to be
         completed in tandem.
         <br><br>
-        Appearance:<br>
+        <b>Appearance:</b><br>
         You may need to get creative with some of the Appearance/Aspect combinations - or just ignore the Aspect
         entirely. Similarly the boons given are just suggestions - characters usually have a specific boon in mind
         anyways when they summon something so just ignore what you don’t like. Half of them came from Signs of Sorcery
         (slightly abbreviated), the others are homebrew.
         <br><br>
-        Boon:<br>
+        <b>Boon:</b><br>
         At the Storyteller’s discretion, the Boon can take effect immediately upon completion of the Trial, or you can
         rule that the Entity needs to be summoned again for it to be granted (which is what the book recommends).
         <br><br>
-        Name:<br>
+        <b>Name:</b><br>
         If you learn an entity’s name, the next time you attempt a summoning and invoke their name, they are guaranteed
         to be the Entity that shows up.
     </p>
@@ -167,7 +166,7 @@
 
     function generateHTML(npc) {
 
-        npchtml = "";
+        let npchtml = "";
 
         // Add reroll option for supernal params, so can't do programmatically
         window.npc = npc;
@@ -188,27 +187,21 @@
     }
 
     function makeTheStupidBox(key) {
-        //make the stupid modal box
-        //thanks w3 schools for making something simple because jqueryui actually kind of sucks
+
         // Get the modal
         var modal = document.getElementById(key.toLowerCase());
-
         // Get the button that opens the modal
         var btn = document.getElementById(key.toLowerCase() + 'Define');
-
         // Get the <span> element that closes the modal
         var span = document.getElementsByClassName("close")[0];
-
         // When the user clicks on the button, open the modal 
         btn.onclick = function () {
             modal.style.display = "block";
         }
-
         // When the user clicks on <span> (x), close the modal
         span.onclick = function () {
             modal.style.display = "none";
         }
-
         // When the user clicks anywhere outside of the modal, close it
         window.onclick = function (event) {
             if (event.target == modal) {
@@ -219,7 +212,7 @@
 
     function generatePlainText(npc) {
 
-        plaintext = "";
+        let plaintext = "";
 
         window.npc = npc;
         plaintext = plaintext.concat("Primary Arcana: " + npc['Primary Arcana']['value'] + "\n");
@@ -239,6 +232,7 @@
 
     async function supernal(retainedData = [], changingParam = '', primaryArcana = '', secondaryArcana = '') {
 
+        // Generate Arcana and Type - applicable to all generate types so done first, but not for specific param rerolls
         if (changingParam.length == 0) {
 
             let npc = {};
@@ -259,8 +253,6 @@
             }
 
             npc['Type'] = { 'value': type[npc['Primary Arcana'].value], 'define': false };
-
-            // Generate entirely new supernal data set
 
             //clear previous results
             output = "Loading...";
