@@ -6,6 +6,11 @@ body {
     color: #b3b3b3;
 }
 
+table {
+    background-color: #232323;
+    color: #b3b3b3;
+}
+
 .button {
     background-color: #2e2e2e;
     color: rgb(226, 226, 226);
