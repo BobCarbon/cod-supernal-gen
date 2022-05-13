@@ -26,7 +26,7 @@
                     one or both):
                 <p>
 
-                    <b>Primary Arcana:</b><br>
+                    <b>Primary Arcanum:</b><br>
                     <select class="select" name="primaryArcana" id="primaryArcana"><br>
                         <option value="">-</option>
                         <option value="Prime">Prime</option>
@@ -41,7 +41,7 @@
                         <option value="Life">Life</option>
                     </select>
                     <br>
-                    <b>Secondary Arcana:</b><br>
+                    <b>Secondary Arcanum:</b><br>
                     <select class="select" name="secondaryArcana" id="secondaryArcana"><br>
                         <option value="">-</option>
                         <option value="Prime">Prime</option>
@@ -84,8 +84,8 @@
         Trial is intended for Entities of Rank 3 and above and the Minor Trials are designed to be for Rank 1 and 2
         entities.
         <br><br>
-        The Major Trial is derived from the Primary Arcana, while the two Minor Trials are derived from the Primary and
-        Secondary Arcana respectively. You can pick whichever you feel is most appropriate, or apply multiple to be
+        The Major Trial is derived from the Primary Arcanum, while the two Minor Trials are derived from the Primary and
+        Secondary Arcanum respectively. You can pick whichever you feel is most appropriate, or apply multiple to be
         completed in tandem.
         <br><br>
         <b>Appearance:</b><br>
@@ -170,8 +170,8 @@
 
         // Add reroll option for supernal params, so can't do programmatically
         window.npc = npc;
-        npchtml = npchtml.concat("<b>Primary Arcana:</b> " + npc['Primary Arcana']['value'] + "<br>");
-        npchtml = npchtml.concat("<b>Secondary Arcana:</b> " + npc['Secondary Arcana']['value'] + "<br>");
+        npchtml = npchtml.concat("<b>Primary Arcanum:</b> " + npc['Primary Arcana']['value'] + "<br>");
+        npchtml = npchtml.concat("<b>Secondary Arcanum:</b> " + npc['Secondary Arcana']['value'] + "<br>");
         npchtml = npchtml.concat("<b>Type:</b> " + npc['Type']['value'] + "<br>");
         npchtml = npchtml.concat("<b>Allegiance:</b> " + npc['Allegiance']['value'] + "<br><p>");
         npchtml = npchtml.concat("<button class='button' id='rerollButton' onclick='supernal(npc, `Name`, ``, ``)'>Reroll</button> " + "<b>Name:</b> The " + npc['Name Qualifier']['value'] + " " + npc['Name']['value'] + "<br>");
@@ -215,8 +215,8 @@
         let plaintext = "";
 
         window.npc = npc;
-        plaintext = plaintext.concat("Primary Arcana: " + npc['Primary Arcana']['value'] + "\n");
-        plaintext = plaintext.concat("Secondary Arcana: " + npc['Secondary Arcana']['value'] + "\n");
+        plaintext = plaintext.concat("Primary Arcanum: " + npc['Primary Arcana']['value'] + "\n");
+        plaintext = plaintext.concat("Secondary Arcanum: " + npc['Secondary Arcana']['value'] + "\n");
         plaintext = plaintext.concat("Type: " + npc['Type']['value'] + "\n");
         plaintext = plaintext.concat("Allegiance: " + npc['Allegiance']['value'] + "\n");
         plaintext = plaintext.concat("Name: The " + npc['Name Qualifier']['value'] + " " + npc['Name']['value'] + "\n");
