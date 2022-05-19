@@ -9,6 +9,7 @@ body {
 table {
     background-color: #232323;
     color: #b3b3b3;
+    table-layout: fixed
 }
 
 .button {
@@ -31,6 +32,7 @@ table {
 .undark-mode table {
     background-color: white;
     color: black;
+    table-layout: fixed
 }
 
 .undark-mode .button {
